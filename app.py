@@ -6,7 +6,7 @@ import plotly.graph_objs as go
 import os
 import pickle
 import matplotlib.pyplot as plt
-
+from knnor_reg import data_augment
 
 def normalize_data(df):
     """Normalize all columns except the last one."""
@@ -27,7 +27,7 @@ dataset_name = st.sidebar.selectbox("Choose a dataset", list(datasets.keys()))
 df = datasets[dataset_name]
 
 # Import the KNNOR_Reg module
-from knnor_reg import data_augment
+
 knnor_reg = data_augment.KNNOR_Reg()
 
 # Sidebar options for KNNOR parameters
